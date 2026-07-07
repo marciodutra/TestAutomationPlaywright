@@ -1,14 +1,13 @@
 package br.com.sistemaescolar.tests;
 
 import br.com.sistemaescolar.base.BaseTest;
-import br.com.sistemaescolar.pages.AlunosPage;
-import br.com.sistemaescolar.pages.DashboardPage;
-import br.com.sistemaescolar.pages.LoginPage;
-import br.com.sistemaescolar.utils.Config;
+import br.com.sistemaescolar.factories.AlunoFactory;
+import br.com.sistemaescolar.models.Aluno;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class DashboardTest extends BaseTest {
+
 
     @Test
     public void deveAcessarDashboard() {
@@ -22,6 +21,7 @@ public class DashboardTest extends BaseTest {
 
     }
 
+
     @Test
     public void deveAbrirTelaDeAlunos() {
 
@@ -32,6 +32,7 @@ public class DashboardTest extends BaseTest {
         page.waitForTimeout(3000);
 
     }
+
 
     @Test
     public void deveAbrirFormularioNovoAluno() {
@@ -49,18 +50,17 @@ public class DashboardTest extends BaseTest {
 
     }
 
+
     @Test
-    public void deveCadastrarAlunoSomenteComCpf() {
+    public void deveCadastrarAlunoComCpfAleatorio() {
 
         realizarLogin();
 
         dashboard.acessarMenu("Alunos");
 
-        alunos.clicarNovoAluno();
+        Aluno aluno = AlunoFactory.criar();
 
-        alunos.preencherCpf("12345678901");
-
-        alunos.clicarSalvar();
+        alunos.cadastrar(aluno);
 
         page.waitForTimeout(5000);
 
