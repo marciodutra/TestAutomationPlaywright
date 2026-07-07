@@ -6,25 +6,29 @@ import java.util.Properties;
 
 public class Config {
 
-    private static final Properties properties = new Properties();
+    public static String get(String chave) {
+        return get(chave, "config.properties");
+    }
 
-    static {
+    public static String get(String chave, String arquivo) {
+
+        Properties properties = new Properties();
 
         try (InputStream input = Config.class.getClassLoader()
-                .getResourceAsStream("config.properties")) {
+                .getResourceAsStream(arquivo)) {
 
             if (input == null) {
-                throw new RuntimeException("Arquivo config.properties não encontrado.");
+                throw new RuntimeException(
+                        "Arquivo " + arquivo + " não encontrado."
+                );
             }
 
             properties.load(input);
 
-        } catch (IOException e) {
-            throw new RuntimeException("Erro ao carregar o arquivo de configuração.", e);
-        }
-    }
+            return properties.getProperty(chave);
 
-    public static String get(String chave) {
-        return properties.getProperty(chave);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

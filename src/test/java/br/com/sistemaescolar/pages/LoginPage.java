@@ -57,4 +57,29 @@ public class LoginPage {
                 .isVisible();
     }
 
+    public String fazerLoginInvalido(String email, String senha) {
+
+        preencherEmail(email);
+        preencherSenha(senha);
+
+        final String[] mensagem = new String[1];
+
+        page.onceDialog(dialog -> {
+            mensagem[0] = dialog.message();
+            dialog.accept();
+        });
+
+        clicarEntrar();
+
+        page.waitForTimeout(1000);
+
+        return mensagem[0];
+    }
+
+    public boolean estaNaTelaLogin() {
+
+        return page.getByPlaceholder("Email")
+                .isVisible();
+    }
+
 }
