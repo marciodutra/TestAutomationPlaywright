@@ -1,93 +1,84 @@
 package br.com.sistemaescolar.pages;
 
+import br.com.sistemaescolar.base.BasePage;
 import br.com.sistemaescolar.models.Aluno;
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 
-public class AlunosPage {
+public class AlunosPage extends BasePage {
 
-    private final Page page;
+    private final Locator btnNovoAluno;
+    private final Locator txtNome;
+    private final Locator txtCpf;
+    private final Locator txtSenha;
+    private final Locator txtEmail;
+    private final Locator dtNascimento;
+    private final Locator cmbSexo;
+    private final Locator cmbEstado;
+    private final Locator btnSalvar;
 
     public AlunosPage(Page page) {
-        this.page = page;
-    }
+        super(page);
 
+        btnNovoAluno = page.getByRole(
+                AriaRole.BUTTON,
+                new Page.GetByRoleOptions().setName("+ Novo aluno")
+        );
+
+        txtNome = page.getByPlaceholder("Nome");
+
+        txtCpf = page.getByPlaceholder("CPF");
+
+        txtSenha = page.getByPlaceholder("Senha");
+
+        txtEmail = page.getByPlaceholder("Email");
+
+        dtNascimento = page.locator("input[type='date']");
+
+        cmbSexo = page.locator("select").nth(0);
+
+        cmbEstado = page.locator("select").nth(1);
+
+        btnSalvar = page.getByRole(
+                AriaRole.BUTTON,
+                new Page.GetByRoleOptions().setName("Salvar aluno")
+        );
+    }
 
     public void clicarNovoAluno() {
-
-        page.getByRole(
-                AriaRole.BUTTON,
-                new Page.GetByRoleOptions()
-                        .setName("+ Novo aluno")
-        ).click();
-
+        btnNovoAluno.click();
     }
-
 
     public boolean formularioNovoAlunoAberto() {
-
-        return page.locator("text=Cadastro de Aluno")
-                .isVisible();
-
+        return page.locator("text=Cadastro de Aluno").isVisible();
     }
-
 
     public void preencherCpf(String cpf) {
-
-        page.getByPlaceholder("CPF")
-                .fill(cpf);
-
+        txtCpf.fill(cpf);
     }
-
 
     public void clicarSalvar() {
-
-        page.getByRole(
-                AriaRole.BUTTON,
-                new Page.GetByRoleOptions()
-                        .setName("Salvar aluno")
-        ).click();
-
+        btnSalvar.click();
     }
-
 
     public void preencherFormulario(Aluno aluno) {
 
-        preencherNome(
-                aluno.getNome()
-        );
+        preencherNome(aluno.getNome());
 
+        preencherCpf(aluno.getCpf());
 
-        preencherCpf(
-                aluno.getCpf()
-        );
+        selecionarSexo(aluno.getSexo());
 
+        preencherDataNascimento(aluno.getDataNascimento());
 
-        selecionarSexo(
-                aluno.getSexo()
-        );
+        preencherSenha(aluno.getSenha());
 
+        selecionarEstado(aluno.getEstado());
 
-        preencherDataNascimento(
-                aluno.getDataNascimento()
-        );
-
-
-        preencherSenha(
-                aluno.getSenha()
-        );
-
-        selecionarEstado(
-                aluno.getEstado()
-        );
-
-
-        preencherEmail(
-                aluno.getEmail()
-        );
+        preencherEmail(aluno.getEmail());
 
     }
-
 
     public void cadastrar(Aluno aluno) {
 
@@ -99,51 +90,33 @@ public class AlunosPage {
 
     }
 
-    public void preencherNome(String nome){
+    public void preencherNome(String nome) {
+        txtNome.fill(nome);
+    }
 
-        page.getByPlaceholder("Nome")
-                .fill(nome);
+    public void selecionarSexo(String sexo) {
+
+        cmbSexo.selectOption(sexo);
 
     }
 
+    public void preencherDataNascimento(String data) {
 
-    public void selecionarSexo(String sexo){
-
-        page.locator("select")
-                .nth(0)
-                .selectOption(sexo);
+        dtNascimento.fill(data);
 
     }
 
-
-    public void preencherDataNascimento(String data){
-
-        page.locator("input[type='date']")
-                .fill(data);
-
+    public void preencherSenha(String senha) {
+        txtSenha.fill(senha);
     }
 
-
-    public void preencherSenha(String senha){
-
-        page.getByPlaceholder("Senha")
-                .fill(senha);
-
+    public void preencherEmail(String email) {
+        txtEmail.fill(email);
     }
 
+    public void selecionarEstado(String estado) {
 
-    public void preencherEmail(String email){
-
-        page.getByPlaceholder("Email")
-                .fill(email);
-
-    }
-
-    public void selecionarEstado(String estado){
-
-        page.locator("select")
-                .nth(1)
-                .selectOption(estado);
+        cmbEstado.selectOption(estado);
 
     }
 

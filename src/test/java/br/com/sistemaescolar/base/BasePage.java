@@ -2,6 +2,7 @@ package br.com.sistemaescolar.base;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.AriaRole;
 
 public abstract class BasePage {
 
@@ -21,5 +22,29 @@ public abstract class BasePage {
 
     protected void preencherPorPlaceholder(String placeholder, String valor) {
         page.getByPlaceholder(placeholder).fill(valor);
+    }
+
+    protected void clicarPorRole(String nome) {
+
+        page.getByRole(
+                AriaRole.BUTTON,
+                new Page.GetByRoleOptions().setName(nome)
+        ).click();
+
+    }
+
+    protected void selecionarOption(int indice, String valor) {
+
+        page.locator("select")
+                .nth(indice)
+                .selectOption(valor);
+
+    }
+
+    protected boolean textoVisivel(String texto) {
+
+        return page.locator("text=" + texto)
+                .isVisible();
+
     }
 }
