@@ -52,7 +52,7 @@ public class DashboardTest extends BaseTest {
 
 
     @Test
-    public void deveCadastrarAlunoComCpfAleatorio() {
+    public void deveCadastrarAlunoComDadosValidos() {
 
         realizarLogin();
 
@@ -60,9 +60,12 @@ public class DashboardTest extends BaseTest {
 
         Aluno aluno = AlunoFactory.criar();
 
-        alunos.cadastrar(aluno);
+        String mensagem = alunos.cadastrar(aluno);
 
-        page.waitForTimeout(5000);
+        Assertions.assertEquals(
+                "Aluno cadastrado com sucesso!",
+                mensagem
+        );
 
     }
 

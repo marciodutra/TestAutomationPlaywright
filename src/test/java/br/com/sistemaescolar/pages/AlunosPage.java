@@ -5,6 +5,7 @@ import br.com.sistemaescolar.models.Aluno;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
+import com.microsoft.playwright.assertions.PlaywrightAssertions;
 
 public class AlunosPage extends BasePage {
 
@@ -80,13 +81,19 @@ public class AlunosPage extends BasePage {
 
     }
 
-    public void cadastrar(Aluno aluno) {
+    public String cadastrar(Aluno aluno) {
 
         clicarNovoAluno();
 
         preencherFormulario(aluno);
 
         clicarSalvar();
+
+        Locator toast = page.locator(".Toastify__toast");
+
+        toast.waitFor();
+
+        return toast.innerText();
 
     }
 

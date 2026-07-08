@@ -3,6 +3,9 @@ package br.com.sistemaescolar.factories;
 import br.com.sistemaescolar.models.Aluno;
 import br.com.sistemaescolar.utils.GeradorCpf;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class AlunoFactory {
 
 
@@ -10,9 +13,13 @@ public class AlunoFactory {
 
         Aluno aluno = new Aluno();
 
+        String identificador =
+                new SimpleDateFormat("yyyyMMddHHmmss")
+                        .format(new Date());
+
 
         aluno.setNome(
-                "Aluno Teste"
+                "Aluno Teste QA " + identificador
         );
 
 
@@ -37,8 +44,9 @@ public class AlunoFactory {
 
 
         aluno.setEmail(
-                "aluno" + System.currentTimeMillis() + "@teste.com"
+                "aluno" + identificador + "@teste.com"
         );
+
 
         aluno.setEstado(
                 "RS"
