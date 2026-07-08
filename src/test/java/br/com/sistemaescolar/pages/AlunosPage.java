@@ -144,4 +144,20 @@ public class AlunosPage extends BasePage {
 
     }
 
+    public String tentarCadastrar(Aluno aluno) {
+
+        clicarNovoAluno();
+
+        preencherFormulario(aluno);
+
+        clicarSalvar();
+
+        Locator toast = page.locator(".Toastify__toast");
+
+        toast.waitFor();
+
+        return toast.innerText();
+
+    }
+
 }

@@ -91,4 +91,24 @@ public class DashboardTest extends BaseTest {
 
     }
 
+    @Test
+    public void naoDeveCadastrarAlunoSemNome() {
+
+        realizarLogin();
+
+        dashboard.acessarMenu("Alunos");
+
+        Aluno aluno = AlunoFactory.criar();
+
+        aluno.setNome("");
+
+        String mensagem = alunos.cadastrar(aluno);
+
+        Assertions.assertEquals(
+                "Preencha os campos obrigatórios",
+                mensagem
+        );
+
+    }
+
 }
