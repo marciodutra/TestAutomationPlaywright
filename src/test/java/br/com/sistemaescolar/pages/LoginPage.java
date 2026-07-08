@@ -1,34 +1,33 @@
 package br.com.sistemaescolar.pages;
 
+import br.com.sistemaescolar.base.BasePage;
 import br.com.sistemaescolar.utils.Config;
 import com.microsoft.playwright.Page;
 
-public class LoginPage {
-
-    private final Page page;
+public class LoginPage extends BasePage {
 
     public LoginPage(Page page) {
-        this.page = page;
+        super(page);
     }
 
     public void abrirSistema() {
-        page.navigate(Config.get("url"));
+        navegar(Config.get("url"));
     }
 
     public void preencherEmail(String email) {
-        page.getByPlaceholder("Email")
-                .fill(email);
+        preencherPorPlaceholder("Email", email);
     }
 
     public void preencherSenha(String senha) {
-        page.getByPlaceholder("Senha")
-                .fill(senha);
+        preencherPorPlaceholder("Senha", senha);
     }
 
     public void clicarEntrar() {
 
-        var botao = page.locator("button",
-                new Page.LocatorOptions().setHasText("Entrar"));
+        var botao = page.locator(
+                "button",
+                new Page.LocatorOptions().setHasText("Entrar")
+        );
 
         System.out.println("Quantidade de botões encontrados: " + botao.count());
 
@@ -52,8 +51,7 @@ public class LoginPage {
         page.locator("text=Bem-vindo, Márcio Dutra")
                 .waitFor();
 
-        return page
-                .locator("text=Bem-vindo, Márcio Dutra")
+        return page.locator("text=Bem-vindo, Márcio Dutra")
                 .isVisible();
     }
 
@@ -81,5 +79,4 @@ public class LoginPage {
         return page.getByPlaceholder("Email")
                 .isVisible();
     }
-
 }
