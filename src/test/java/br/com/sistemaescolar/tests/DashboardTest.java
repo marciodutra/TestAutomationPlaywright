@@ -111,4 +111,64 @@ public class DashboardTest extends BaseTest {
 
     }
 
+    @Test
+    public void naoDeveCadastrarAlunoSemCpf() {
+
+        realizarLogin();
+
+        dashboard.acessarMenu("Alunos");
+
+        Aluno aluno = AlunoFactory.criar();
+
+        aluno.setCpf("");
+
+        String mensagem = alunos.cadastrar(aluno);
+
+        Assertions.assertEquals(
+                "Preencha os campos obrigatórios",
+                mensagem
+        );
+
+    }
+
+    @Test
+    public void naoDeveCadastrarAlunoSemEmail() {
+
+        realizarLogin();
+
+        dashboard.acessarMenu("Alunos");
+
+        Aluno aluno = AlunoFactory.criar();
+
+        aluno.setEmail("");
+
+        String mensagem = alunos.cadastrar(aluno);
+
+        Assertions.assertEquals(
+                "Preencha os campos obrigatórios",
+                mensagem
+        );
+
+    }
+
+    @Test
+    public void naoDeveCadastrarAlunoSemSenha() {
+
+        realizarLogin();
+
+        dashboard.acessarMenu("Alunos");
+
+        Aluno aluno = AlunoFactory.criar();
+
+        aluno.setSenha("");
+
+        String mensagem = alunos.cadastrar(aluno);
+
+        Assertions.assertEquals(
+                "Senha obrigatória para novo aluno",
+                mensagem
+        );
+
+    }
+
 }
