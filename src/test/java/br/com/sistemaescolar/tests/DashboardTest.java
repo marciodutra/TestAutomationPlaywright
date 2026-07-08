@@ -69,4 +69,26 @@ public class DashboardTest extends BaseTest {
 
     }
 
+    @Test
+    public void deveEncontrarAlunoCadastradoNaLista() {
+
+        realizarLogin();
+
+        dashboard.acessarMenu("Alunos");
+
+        Aluno aluno = AlunoFactory.criar();
+
+        alunos.cadastrar(aluno);
+
+        dashboard.acessarMenu("Alunos");
+
+        alunos.pesquisarAluno(aluno.getNome());
+
+        Assertions.assertTrue(
+                alunos.alunoApareceNaLista(aluno.getNome()),
+                "Aluno cadastrado não apareceu na lista."
+        );
+
+    }
+
 }

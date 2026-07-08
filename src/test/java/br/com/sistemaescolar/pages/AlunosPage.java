@@ -18,6 +18,7 @@ public class AlunosPage extends BasePage {
     private final Locator cmbSexo;
     private final Locator cmbEstado;
     private final Locator btnSalvar;
+    private final Locator txtPesquisa;
 
     public AlunosPage(Page page) {
         super(page);
@@ -34,6 +35,8 @@ public class AlunosPage extends BasePage {
         txtSenha = page.getByPlaceholder("Senha");
 
         txtEmail = page.getByPlaceholder("Email");
+
+        txtPesquisa = page.getByPlaceholder("Pesquisar aluno...");
 
         dtNascimento = page.locator("input[type='date']");
 
@@ -124,6 +127,20 @@ public class AlunosPage extends BasePage {
     public void selecionarEstado(String estado) {
 
         cmbEstado.selectOption(estado);
+
+    }
+
+    public void pesquisarAluno(String nome) {
+
+        txtPesquisa.fill(nome);
+
+        page.waitForTimeout(1000);
+
+    }
+
+    public boolean alunoApareceNaLista(String nome) {
+
+        return page.getByText(nome).isVisible();
 
     }
 
