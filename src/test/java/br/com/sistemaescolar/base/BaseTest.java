@@ -83,6 +83,11 @@ public class BaseTest {
 
         try {
 
+            if (page == null) {
+                return;
+            }
+
+
             String dataHora = LocalDateTime.now()
                     .format(
                             DateTimeFormatter.ofPattern(

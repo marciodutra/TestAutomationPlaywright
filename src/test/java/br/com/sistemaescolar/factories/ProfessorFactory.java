@@ -4,6 +4,7 @@ import br.com.sistemaescolar.models.Professor;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 public class ProfessorFactory {
 
@@ -12,7 +13,7 @@ public class ProfessorFactory {
         Professor professor = new Professor();
 
         String identificador =
-                new SimpleDateFormat("yyyyMMddHHmmss")
+                new SimpleDateFormat("yyyyMMddHHmmssSSS")
                         .format(new Date());
 
         professor.setNome(
@@ -24,18 +25,54 @@ public class ProfessorFactory {
         );
 
         professor.setSenha(
-                "123456"
+                gerarSenha()
         );
 
         professor.setDisciplina(
-                "Informática"
+                gerarDisciplina()
         );
 
         professor.setTelefone(
-                "51999999999"
+                gerarTelefone()
         );
 
         return professor;
+
+    }
+
+
+    private static String gerarSenha() {
+
+        return "Senha"
+                + new Random().nextInt(9000) + 1000;
+
+    }
+
+
+    private static String gerarDisciplina() {
+
+        String[] disciplinas = {
+                "Informática",
+                "Matemática",
+                "Português",
+                "História",
+                "Geografia",
+                "Ciências"
+        };
+
+        Random random = new Random();
+
+        return disciplinas[random.nextInt(disciplinas.length)];
+
+    }
+
+
+    private static String gerarTelefone() {
+
+        Random random = new Random();
+
+        return "5199"
+                + (10000000 + random.nextInt(89999999));
 
     }
 

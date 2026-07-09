@@ -14,6 +14,8 @@ public class ProfessoresPage extends BasePage {
     private final Locator txtDisciplina;
     private final Locator txtTelefone;
     private final Locator btnSalvar;
+    private final Locator mensagemSucesso;
+    private final Locator textoProfessor;
 
     public ProfessoresPage(Page page) {
         super(page);
@@ -32,10 +34,16 @@ public class ProfessoresPage extends BasePage {
 
         txtTelefone = page.getByPlaceholder("Telefone");
 
+
+
         btnSalvar = page.getByRole(
                 AriaRole.BUTTON,
                 new Page.GetByRoleOptions().setName("Salvar professor")
         );
+
+        mensagemSucesso = page.getByText("Professor cadastrado com sucesso!");
+
+        textoProfessor = page.getByText("Professor");
     }
 
     public void clicarNovoProfessor() {
@@ -78,6 +86,39 @@ public class ProfessoresPage extends BasePage {
 
     public void clicarSalvar() {
         btnSalvar.click();
+    }
+
+    public void preencherFormularioProfessor(
+            String nome,
+            String email,
+            String senha,
+            String disciplina,
+            String telefone
+    ) {
+
+        preencherNome(nome);
+        preencherEmail(email);
+        preencherSenha(senha);
+        preencherDisciplina(disciplina);
+        preencherTelefone(telefone);
+
+    }
+
+    public boolean isCadastroProfessorRealizadoComSucesso() {
+
+        return mensagemSucesso.isVisible();
+
+    }
+
+    public boolean professorApareceNaLista(String nomeProfessor) {
+
+        Locator professor =
+                page.getByText(nomeProfessor);
+
+        professor.waitFor();
+
+        return professor.isVisible();
+
     }
 
 }
