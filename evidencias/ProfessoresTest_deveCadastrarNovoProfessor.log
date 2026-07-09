@@ -1,0 +1,4 @@
+Teste: ProfessoresTest_deveCadastrarNovoProfessor
+Status: FALHOU
+Data/Hora: 2026-07-09T14:30:17.119865800
+Erro: expected: <true> but was: <false>

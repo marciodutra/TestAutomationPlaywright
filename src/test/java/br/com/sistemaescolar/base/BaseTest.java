@@ -13,6 +13,10 @@ import org.junit.jupiter.api.TestInfo;
 import java.nio.file.Path;
 import java.nio.file.Files;
 import java.time.LocalDateTime;
+import br.com.sistemaescolar.extensions.EvidenciaExtension;
+import org.junit.jupiter.api.extension.ExtendWith;
+
+@ExtendWith(EvidenciaExtension.class)
 
 public class BaseTest {
 
@@ -69,7 +73,6 @@ public class BaseTest {
     public void finalizar() {
 
         capturarEvidencia();
-        gerarLog();
 
         if (page != null) {
             page.close();
