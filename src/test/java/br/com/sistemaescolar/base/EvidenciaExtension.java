@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
+import br.com.sistemaescolar.utils.ConsoleLogger;
 
 public class EvidenciaExtension implements TestWatcher {
 
@@ -43,27 +44,44 @@ public class EvidenciaExtension implements TestWatcher {
                     pasta.resolve(nome + ".log");
 
 
-            String conteudo =
-                    "Teste: " + nome + "\n"
-                            + "Status: " + status + "\n"
-                            + "Data/Hora: " + LocalDateTime.now()
-                            + "\n";
+            StringBuilder conteudo = new StringBuilder();
 
+            conteudo.append("Teste: ")
+                    .append(nome)
+                    .append("\n");
+
+            conteudo.append("Status: ")
+                    .append(status)
+                    .append("\n");
+
+            conteudo.append("Data/Hora: ")
+                    .append(LocalDateTime.now())
+                    .append("\n\n");
+
+            conteudo.append("Console:\n");
+
+            for (String mensagem : ConsoleLogger.obterMensagens()) {
+
+                conteudo.append(mensagem)
+                        .append("\n");
+
+            }
 
             if (erro != null) {
 
-                conteudo +=
-                        "Erro: "
-                                + erro
-                                + "\n";
+                conteudo.append("\nErro:\n")
+                        .append(erro)
+                        .append("\n");
 
             }
 
 
             Files.writeString(
                     arquivo,
-                    conteudo
+                    conteudo.toString()
             );
+
+            ConsoleLogger.limpar();
 
 
         } catch (Exception e) {

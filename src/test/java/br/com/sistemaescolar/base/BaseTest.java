@@ -15,6 +15,7 @@ import java.nio.file.Files;
 import java.time.LocalDateTime;
 import br.com.sistemaescolar.extensions.EvidenciaExtension;
 import org.junit.jupiter.api.extension.ExtendWith;
+import br.com.sistemaescolar.utils.ConsoleLogger;
 
 @ExtendWith(EvidenciaExtension.class)
 
@@ -47,10 +48,22 @@ public class BaseTest {
 
         page = browser.newPage();
 
+
         loginPage = new LoginPage(page);
         dashboard = new DashboardPage(page);
         alunos = new AlunosPage(page);
         professores = new ProfessoresPage(page);
+
+        page.onConsoleMessage(msg -> {
+
+            String mensagem =
+                    "[" + msg.type() + "] " + msg.text();
+
+            ConsoleLogger.adicionar(mensagem);
+
+            System.out.println(mensagem);
+
+        });
 
     }
 

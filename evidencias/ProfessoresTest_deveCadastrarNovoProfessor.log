@@ -1,4 +1,46 @@
 Teste: ProfessoresTest_deveCadastrarNovoProfessor
-Status: FALHOU
-Data/Hora: 2026-07-09T14:30:17.119865800
-Erro: expected: <true> but was: <false>
+Status: PASSOU
+Data/Hora: 2026-07-09T15:19:35.277926900
+
+Console:
+[verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
+[log] Login realizado: admin
+[verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
+[log] DASHBOARD: {
+  "totalAlunos": 53,
+  "totalProfessores": 17,
+  "totalTurmas": 7,
+  "totalMatriculas": 15,
+  "ultimasMatriculas": [
+    {
+      "id": 21,
+      "aluno": "Mauricio",
+      "turma": "A07 - 3º ano",
+      "data_matricula": "2026-06-19T16:05:39.375Z"
+    },
+    {
+      "id": 20,
+      "aluno": "Jairo",
+      "turma": "A07 - 3º ano",
+      "data_matricula": "2026-06-18T21:03:33.763Z"
+    },
+    {
+      "id": 19,
+      "aluno": "Yasmin",
+      "turma": "A07 - 3º ano",
+      "data_matricula": "2026-06-18T18:01:52.872Z"
+    },
+    {
+      "id": 18,
+      "aluno": "Márcio",
+      "turma": "A07 - 3º ano",
+      "data_matricula": "2026-06-18T18:01:46.312Z"
+    },
+    {
+      "id": 17,
+      "aluno": "Cássio",
+      "turma": "A07 - 3º ano",
+      "data_matricula": "2026-06-18T18:01:39.212Z"
+    }
+  ]
+}
