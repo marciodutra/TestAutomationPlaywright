@@ -1,14 +1,14 @@
 Teste: ProfessoresTest_deveCadastrarNovoProfessor
 Status: PASSOU
-Data/Hora: 2026-07-09T15:19:35.277926900
+Data/Hora: 2026-07-09T17:33:16.955716800
 
 Console:
 [verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
 [log] Login realizado: admin
 [verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
 [log] DASHBOARD: {
-  "totalAlunos": 53,
-  "totalProfessores": 17,
+  "totalAlunos": 59,
+  "totalProfessores": 18,
   "totalTurmas": 7,
   "totalMatriculas": 15,
   "ultimasMatriculas": [

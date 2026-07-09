@@ -1,13 +1,13 @@
 Teste: AlunosTest_naoDeveCadastrarAlunoSemNome
 Status: PASSOU
-Data/Hora: 2026-07-09T16:52:39.967833900
+Data/Hora: 2026-07-09T17:31:11.453514
 
 Console:
 [verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
 [log] Login realizado: admin
 [verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
 [log] DASHBOARD: {
-  "totalAlunos": 54,
+  "totalAlunos": 58,
   "totalProfessores": 18,
   "totalTurmas": 7,
   "totalMatriculas": 15,

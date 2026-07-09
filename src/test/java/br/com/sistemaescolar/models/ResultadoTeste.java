@@ -1,23 +1,28 @@
 package br.com.sistemaescolar.models;
 
+import java.time.LocalDateTime;
+
 public class ResultadoTeste {
 
     private final String nomeTeste;
     private final String status;
     private final String screenshot;
     private final String log;
+    private final LocalDateTime dataHora;
 
     public ResultadoTeste(
             String nomeTeste,
             String status,
             String screenshot,
-            String log
+            String log,
+            LocalDateTime dataHora
     ) {
 
         this.nomeTeste = nomeTeste;
         this.status = status;
         this.screenshot = screenshot;
         this.log = log;
+        this.dataHora = dataHora;
 
     }
 
@@ -35,6 +40,10 @@ public class ResultadoTeste {
 
     public String getLog() {
         return log;
+    }
+
+    public LocalDateTime getDataHora() {
+        return dataHora;
     }
 
 }

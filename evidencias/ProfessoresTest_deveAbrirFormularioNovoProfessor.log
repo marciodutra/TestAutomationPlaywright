@@ -1,13 +1,13 @@
-Teste: AlunosTest_deveAbrirFormularioNovoAluno
+Teste: ProfessoresTest_deveAbrirFormularioNovoProfessor
 Status: PASSOU
-Data/Hora: 2026-07-09T17:31:22.616911100
+Data/Hora: 2026-07-09T17:33:02.525330
 
 Console:
 [verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
 [log] Login realizado: admin
 [verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
 [log] DASHBOARD: {
-  "totalAlunos": 58,
+  "totalAlunos": 59,
   "totalProfessores": 18,
   "totalTurmas": 7,
   "totalMatriculas": 15,

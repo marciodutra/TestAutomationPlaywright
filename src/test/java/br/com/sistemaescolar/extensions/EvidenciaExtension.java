@@ -31,7 +31,8 @@ public class EvidenciaExtension implements TestWatcher {
                 nomeTeste,
                 status,
                 nomeTeste + ".png",
-                nomeTeste + ".log"
+                nomeTeste + ".log",
+                LocalDateTime.now()
         );
 
         ReportHtml.adicionar(resultado);
