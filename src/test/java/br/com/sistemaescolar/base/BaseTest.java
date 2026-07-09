@@ -4,13 +4,15 @@ import com.microsoft.playwright.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import java.nio.file.Paths;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import br.com.sistemaescolar.pages.LoginPage;
 import br.com.sistemaescolar.pages.ProfessoresPage;
 import br.com.sistemaescolar.utils.Config;
 import br.com.sistemaescolar.pages.AlunosPage;
 import br.com.sistemaescolar.pages.DashboardPage;
+import org.junit.jupiter.api.TestInfo;
+import java.nio.file.Path;
+import java.nio.file.Files;
+import java.time.LocalDateTime;
 
 public class BaseTest {
 
@@ -21,9 +23,15 @@ public class BaseTest {
     protected DashboardPage dashboard;
     protected AlunosPage alunos;
     protected ProfessoresPage professores;
+    protected String nomeTeste;
 
     @BeforeEach
-    public void iniciar() {
+    public void iniciar(TestInfo testInfo) {
+
+        nomeTeste =
+                testInfo.getTestClass().get().getSimpleName()
+                        + "_"
+                        + testInfo.getTestMethod().get().getName();
 
         playwright = Playwright.create();
 
@@ -40,9 +48,6 @@ public class BaseTest {
         alunos = new AlunosPage(page);
         professores = new ProfessoresPage(page);
 
-        page.onConsoleMessage(msg ->
-                System.out.println("CONSOLE: " + msg.text())
-        );
     }
 
     protected void realizarLogin() {
@@ -64,6 +69,7 @@ public class BaseTest {
     public void finalizar() {
 
         capturarEvidencia();
+        gerarLog();
 
         if (page != null) {
             page.close();
@@ -88,23 +94,15 @@ public class BaseTest {
             }
 
 
-            String dataHora = LocalDateTime.now()
-                    .format(
-                            DateTimeFormatter.ofPattern(
-                                    "yyyy-MM-dd_HH-mm-ss"
-                            )
-                    );
-
-
             page.screenshot(
                     new Page.ScreenshotOptions()
                             .setPath(
                                     Paths.get(
-                                            "screenshots/evidencia_"
-                                                    + dataHora
+                                            "evidencias/"
+                                                    + nomeTeste
                                                     + ".png"
                                     )
-                            )
+                    )
                             .setFullPage(true)
             );
 
@@ -122,5 +120,48 @@ public class BaseTest {
             );
 
         }
+    }
+
+    private void gerarLog() {
+
+        try {
+
+            Path pasta =
+                    Paths.get("evidencias");
+
+            Files.createDirectories(pasta);
+
+
+            Path arquivo =
+                    pasta.resolve(nomeTeste + ".log");
+
+
+            String conteudo =
+                    "Teste executado: " + nomeTeste + "\n"
+                            + "Data/Hora: " + LocalDateTime.now() + "\n"
+                            + "URL final: " + page.url() + "\n"
+                            + "Status: EXECUTADO";
+
+
+            Files.writeString(
+                    arquivo,
+                    conteudo
+            );
+
+
+            System.out.println(
+                    "Log salvo com sucesso"
+            );
+
+
+        } catch (Exception e) {
+
+            System.out.println(
+                    "Erro ao salvar log: "
+                            + e.getMessage()
+            );
+
+        }
+
     }
 }
