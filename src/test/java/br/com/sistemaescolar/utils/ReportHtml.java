@@ -525,4 +525,3 @@ public class ReportHtml {
     }
 
 }
-

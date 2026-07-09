@@ -118,7 +118,7 @@ public class BaseTest {
                                                     + nomeTeste
                                                     + ".png"
                                     )
-                    )
+                            )
                             .setFullPage(true)
             );
 

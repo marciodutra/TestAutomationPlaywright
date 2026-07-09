@@ -1,6 +1,6 @@
-Teste: AlunosTest_deveCadastrarAlunoComDadosValidos
-Status: PASSOU
-Data/Hora: 2026-07-09T18:53:08.536577500
+Teste: AlunosTest_naoDeveCadastrarAlunoSemCpf
+Status: FALHOU
+Data/Hora: 2026-07-09T18:52:30.872628
 
 Console:
 [verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
@@ -44,3 +44,10 @@ Console:
     }
   ]
 }
+[error] Failed to load resource: the server responded with a status of 500 ()
+[log] AxiosError: Request failed with status code 500
+    at vr (https://sistemaescolar-virid.vercel.app/static/js/main.ecaa02f2.js:2:506684)
+    at XMLHttpRequest.m (https://sistemaescolar-virid.vercel.app/static/js/main.ecaa02f2.js:2:512289)
+
+Erro:
+expected: <Preencha os campos obrigatórios> but was: <Erro ao salvar aluno>
