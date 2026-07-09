@@ -8,6 +8,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import br.com.sistemaescolar.utils.ConsoleLogger;
+import br.com.sistemaescolar.models.ResultadoTeste;
+import br.com.sistemaescolar.utils.ReportHtml;
 
 public class EvidenciaExtension implements TestWatcher {
 
@@ -17,6 +19,22 @@ public class EvidenciaExtension implements TestWatcher {
         return context.getTestClass().get().getSimpleName()
                 + "_"
                 + context.getTestMethod().get().getName();
+
+    }
+
+    private void adicionarResultado(
+            String nomeTeste,
+            String status
+    ) {
+
+        ResultadoTeste resultado = new ResultadoTeste(
+                nomeTeste,
+                status,
+                nomeTeste + ".png",
+                nomeTeste + ".log"
+        );
+
+        ReportHtml.adicionar(resultado);
 
     }
 
@@ -81,7 +99,12 @@ public class EvidenciaExtension implements TestWatcher {
                     conteudo.toString()
             );
 
+            adicionarResultado(nome, status);
+
+            ReportHtml.gerar();
+
             ConsoleLogger.limpar();
+
 
 
         } catch (Exception e) {

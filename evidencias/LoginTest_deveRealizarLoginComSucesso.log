@@ -1,0 +1,7 @@
+Teste: LoginTest_deveRealizarLoginComSucesso
+Status: PASSOU
+Data/Hora: 2026-07-09T16:44:08.321943700
+
+Console:
+[verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
+[log] Login realizado: admin

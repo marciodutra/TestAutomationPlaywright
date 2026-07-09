@@ -1,4 +1,46 @@
-Teste executado: AlunosTest_deveEncontrarAlunoCadastradoNaLista
-Data/Hora: 2026-07-09T14:05:27.003582300
-URL final: https://sistemaescolar-virid.vercel.app/alunos
-Status: EXECUTADO
+Teste: AlunosTest_deveEncontrarAlunoCadastradoNaLista
+Status: PASSOU
+Data/Hora: 2026-07-09T16:52:10.720219600
+
+Console:
+[verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
+[log] Login realizado: admin
+[verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
+[log] DASHBOARD: {
+  "totalAlunos": 53,
+  "totalProfessores": 18,
+  "totalTurmas": 7,
+  "totalMatriculas": 15,
+  "ultimasMatriculas": [
+    {
+      "id": 21,
+      "aluno": "Mauricio",
+      "turma": "A07 - 3º ano",
+      "data_matricula": "2026-06-19T16:05:39.375Z"
+    },
+    {
+      "id": 20,
+      "aluno": "Jairo",
+      "turma": "A07 - 3º ano",
+      "data_matricula": "2026-06-18T21:03:33.763Z"
+    },
+    {
+      "id": 19,
+      "aluno": "Yasmin",
+      "turma": "A07 - 3º ano",
+      "data_matricula": "2026-06-18T18:01:52.872Z"
+    },
+    {
+      "id": 18,
+      "aluno": "Márcio",
+      "turma": "A07 - 3º ano",
+      "data_matricula": "2026-06-18T18:01:46.312Z"
+    },
+    {
+      "id": 17,
+      "aluno": "Cássio",
+      "turma": "A07 - 3º ano",
+      "data_matricula": "2026-06-18T18:01:39.212Z"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+Teste: LoginTest_naoDevePermitirLoginComSenhaInvalida
+Status: PASSOU
+Data/Hora: 2026-07-09T16:43:50.450038
+
+Console:
+[verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
