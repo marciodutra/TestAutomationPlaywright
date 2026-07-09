@@ -47,4 +47,6 @@ public abstract class BasePage {
                 .isVisible();
 
     }
+
+
 }

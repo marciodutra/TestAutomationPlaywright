@@ -7,11 +7,10 @@ import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import br.com.sistemaescolar.pages.LoginPage;
+import br.com.sistemaescolar.pages.ProfessoresPage;
 import br.com.sistemaescolar.utils.Config;
 import br.com.sistemaescolar.pages.AlunosPage;
 import br.com.sistemaescolar.pages.DashboardPage;
-import br.com.sistemaescolar.pages.LoginPage;
-import br.com.sistemaescolar.utils.Config;
 
 public class BaseTest {
 
@@ -21,6 +20,7 @@ public class BaseTest {
     protected LoginPage loginPage;
     protected DashboardPage dashboard;
     protected AlunosPage alunos;
+    protected ProfessoresPage professores;
 
     @BeforeEach
     public void iniciar() {
@@ -38,6 +38,7 @@ public class BaseTest {
         loginPage = new LoginPage(page);
         dashboard = new DashboardPage(page);
         alunos = new AlunosPage(page);
+        professores = new ProfessoresPage(page);
 
         page.onConsoleMessage(msg ->
                 System.out.println("CONSOLE: " + msg.text())
