@@ -47,7 +47,6 @@ public class BaseTest {
 
     protected void realizarLogin() {
 
-        LoginPage loginPage = new LoginPage(page);
 
         loginPage.abrirSistema();
 

@@ -16,7 +16,7 @@ public class ProfessoresTest extends BaseTest {
         professores.clicarNovoProfessor();
 
         Assertions.assertTrue(
-                professores.formularioNovoProfessorAberto(),
+                professores.isFormularioNovoProfessorVisivel(),
                 "O formulário de cadastro do professor não foi aberto."
         );
 
