@@ -10,9 +10,11 @@ import java.time.LocalDateTime;
 import br.com.sistemaescolar.utils.ConsoleLogger;
 import br.com.sistemaescolar.models.ResultadoTeste;
 import br.com.sistemaescolar.utils.ReportHtml;
+import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
 
-public class EvidenciaExtension implements TestWatcher {
+public class EvidenciaExtension implements TestWatcher, BeforeTestExecutionCallback {
 
+    private long inicioExecucao;
 
     private String nomeTeste(ExtensionContext context) {
 
@@ -26,13 +28,22 @@ public class EvidenciaExtension implements TestWatcher {
             String nomeTeste,
             String status
     ) {
+        long tempoExecucao =
+                System.currentTimeMillis() - inicioExecucao;
 
         ResultadoTeste resultado = new ResultadoTeste(
                 nomeTeste,
                 status,
                 nomeTeste + ".png",
                 nomeTeste + ".log",
-                LocalDateTime.now()
+                LocalDateTime.now(),
+                tempoExecucao
+
+        );
+        System.out.println(
+                "Tempo do teste: "
+                        + tempoExecucao
+                        + " ms"
         );
 
         ReportHtml.adicionar(resultado);
@@ -145,6 +156,15 @@ public class EvidenciaExtension implements TestWatcher {
                 "FALHOU",
                 cause.getMessage()
         );
+
+    }
+
+    @Override
+    public void beforeTestExecution(
+            ExtensionContext context
+    ) {
+
+        inicioExecucao = System.currentTimeMillis();
 
     }
 

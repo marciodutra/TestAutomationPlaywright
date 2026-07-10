@@ -9,6 +9,7 @@ public class ResultadoTeste {
     private final String screenshot;
     private final String log;
     private final LocalDateTime dataHora;
+    private final long tempoExecucao;
 
 
     public ResultadoTeste(
@@ -16,7 +17,8 @@ public class ResultadoTeste {
             String status,
             String screenshot,
             String log,
-            LocalDateTime dataHora
+            LocalDateTime dataHora,
+            long tempoExecucao
     ) {
 
         this.nomeTeste = nomeTeste;
@@ -24,6 +26,7 @@ public class ResultadoTeste {
         this.screenshot = screenshot;
         this.log = log;
         this.dataHora = dataHora;
+        this.tempoExecucao = tempoExecucao;
 
     }
 
@@ -45,6 +48,10 @@ public class ResultadoTeste {
 
     public LocalDateTime getDataHora() {
         return dataHora;
+    }
+
+    public long getTempoExecucao() {
+        return tempoExecucao;
     }
 
 }

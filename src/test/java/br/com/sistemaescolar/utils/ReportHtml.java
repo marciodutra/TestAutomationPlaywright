@@ -61,6 +61,11 @@ public class ReportHtml {
                             .filter(r -> r.getStatus().equals("FALHOU"))
                             .count();
 
+            long tempoTotal =
+                    resultados.stream()
+                            .mapToLong(ResultadoTeste::getTempoExecucao)
+                            .sum();
+
 
             double percentual =
                     total == 0
@@ -390,6 +395,25 @@ public class ReportHtml {
                     </div>
 
 
+
+                    <div class="card">
+
+                        <div class="numero azul">
+""");
+
+            html.append(tempoTotal);
+            html.append(" ms");
+
+            html.append("""
+                        </div>
+
+                        <div class="titulo">
+                            Tempo total
+                        </div>
+
+                    </div>
+
+
                 </div>
 
 
@@ -401,6 +425,7 @@ public class ReportHtml {
 
                     <th>Teste</th>
                     <th>Data/Hora</th>
+                    <th>Tempo</th>
                     <th>Status</th>
                     <th>Evidências</th>
 
@@ -436,6 +461,10 @@ public class ReportHtml {
                         )
                         .append("</td>");
 
+                html.append("<td>")
+                        .append(resultado.getTempoExecucao())
+                        .append(" ms")
+                        .append("</td>");
 
 
                 html.append("<td>");
