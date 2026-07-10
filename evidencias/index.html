@@ -137,12 +137,13 @@ th {
 }
 
 
-td {
+    td {
 
-    padding:12px;
-    border-bottom:1px solid #ddd;
+         padding:12px;
+         border-bottom:1px solid #ddd;
+         vertical-align:top;
 
-}
+     }
 
 
 .status {
@@ -209,7 +210,7 @@ a {
     <div class="data">
 
         Relatório gerado em:
-10/07/2026 17:40:22    </div>
+10/07/2026 19:09:10    </div>
 
 </div>
 
@@ -221,7 +222,7 @@ a {
     <div class="card">
 
         <div class="numero azul">
-5        </div>
+7        </div>
 
         <div class="titulo">
             Total de testes
@@ -247,7 +248,7 @@ a {
     <div class="card">
 
         <div class="numero vermelho">
-0        </div>
+2        </div>
 
         <div class="titulo">
             Reprovados
@@ -260,7 +261,7 @@ a {
     <div class="card">
 
         <div class="numero azul">
-100,00%                        </div>
+71,43%                        </div>
 
                         <div class="titulo">
                             Taxa de sucesso
@@ -273,7 +274,7 @@ a {
                     <div class="card">
 
                         <div class="numero azul">
-56,18 s        </div>
+1 min 14 s        </div>
 
         <div class="titulo">
             Tempo total
@@ -291,15 +292,16 @@ a {
 
 <tr>
 
-    <th>Teste</th>
-    <th>Data/Hora</th>
-    <th>Tempo</th>
-    <th>Status</th>
-    <th>Evidências</th>
+   <th>Teste</th>
+   <th>Data/Hora</th>
+   <th>Tempo</th>
+   <th>Status</th>
+   <th>Motivo da Falha</th>
+   <th>Evidências</th>
 
 </tr>
 
-<tr><td>AlunosTest_deveEncontrarAlunoCadastradoNaLista</td><td>10/07/2026 17:39:34</td><td>15,46 s</td><td><span class='status passou'>PASSOU</span></td><td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveEncontrarAlunoCadastradoNaLista.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveEncontrarAlunoCadastradoNaLista.log'>📄 Log</a></td></tr><tr><td>AlunosTest_naoDeveCadastrarAlunoSemSenha</td><td>10/07/2026 17:39:46</td><td>11,11 s</td><td><span class='status passou'>PASSOU</span></td><td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemSenha.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemSenha.log'>📄 Log</a></td></tr><tr><td>AlunosTest_naoDeveCadastrarAlunoSemNome</td><td>10/07/2026 17:40:00</td><td>11,46 s</td><td><span class='status passou'>PASSOU</span></td><td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemNome.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemNome.log'>📄 Log</a></td></tr><tr><td>AlunosTest_deveAbrirFormularioNovoAluno</td><td>10/07/2026 17:40:08</td><td>5,88 s</td><td><span class='status passou'>PASSOU</span></td><td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveAbrirFormularioNovoAluno.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveAbrirFormularioNovoAluno.log'>📄 Log</a></td></tr><tr><td>AlunosTest_deveCadastrarAlunoComDadosValidos</td><td>10/07/2026 17:40:22</td><td>12,27 s</td><td><span class='status passou'>PASSOU</span></td><td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveCadastrarAlunoComDadosValidos.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveCadastrarAlunoComDadosValidos.log'>📄 Log</a></td></tr>
+<tr><td>AlunosTest_deveEncontrarAlunoCadastradoNaLista</td><td>10/07/2026 19:07:59</td><td>14,87 s</td><td><span class='status passou'>PASSOU</span></td><td>-<td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveEncontrarAlunoCadastradoNaLista.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveEncontrarAlunoCadastradoNaLista.log'>📄 Log</a></td></tr><tr><td>AlunosTest_naoDeveCadastrarAlunoSemEmail</td><td>10/07/2026 19:08:12</td><td>11,32 s</td><td><span class='status falhou'>FALHOU</span></td><td>expected: <Preencha os campos obrigatórios> but was: <Erro ao salvar aluno><td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemEmail.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemEmail.log'>📄 Log</a></td></tr><tr><td>AlunosTest_naoDeveCadastrarAlunoSemSenha</td><td>10/07/2026 19:08:26</td><td>11,88 s</td><td><span class='status passou'>PASSOU</span></td><td>-<td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemSenha.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemSenha.log'>📄 Log</a></td></tr><tr><td>AlunosTest_naoDeveCadastrarAlunoSemCpf</td><td>10/07/2026 19:08:38</td><td>9,82 s</td><td><span class='status falhou'>FALHOU</span></td><td>expected: <Preencha os campos obrigatórios> but was: <Erro ao salvar aluno><td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemCpf.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemCpf.log'>📄 Log</a></td></tr><tr><td>AlunosTest_naoDeveCadastrarAlunoSemNome</td><td>10/07/2026 19:08:50</td><td>9,96 s</td><td><span class='status passou'>PASSOU</span></td><td>-<td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemNome.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemNome.log'>📄 Log</a></td></tr><tr><td>AlunosTest_deveAbrirFormularioNovoAluno</td><td>10/07/2026 19:08:57</td><td>5,30 s</td><td><span class='status passou'>PASSOU</span></td><td>-<td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveAbrirFormularioNovoAluno.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveAbrirFormularioNovoAluno.log'>📄 Log</a></td></tr><tr><td>AlunosTest_deveCadastrarAlunoComDadosValidos</td><td>10/07/2026 19:09:10</td><td>10,97 s</td><td><span class='status passou'>PASSOU</span></td><td>-<td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveCadastrarAlunoComDadosValidos.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveCadastrarAlunoComDadosValidos.log'>📄 Log</a></td></tr>
 </table>
 
 

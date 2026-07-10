@@ -26,7 +26,8 @@ public class EvidenciaExtension implements TestWatcher, BeforeTestExecutionCallb
 
     private void adicionarResultado(
             String nomeTeste,
-            String status
+            String status,
+            String erro
     ) {
         long tempoExecucao =
                 System.currentTimeMillis() - inicioExecucao;
@@ -37,9 +38,11 @@ public class EvidenciaExtension implements TestWatcher, BeforeTestExecutionCallb
                 nomeTeste + ".png",
                 nomeTeste + ".log",
                 LocalDateTime.now(),
-                tempoExecucao
+                tempoExecucao,
+                erro
 
         );
+
         System.out.println(
                 "Tempo do teste: "
                         + tempoExecucao
@@ -111,7 +114,7 @@ public class EvidenciaExtension implements TestWatcher, BeforeTestExecutionCallb
                     conteudo.toString()
             );
 
-            adicionarResultado(nome, status);
+            adicionarResultado(nome, status, erro);
 
             ReportHtml.gerar();
 

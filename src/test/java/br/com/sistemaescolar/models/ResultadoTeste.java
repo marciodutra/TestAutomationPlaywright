@@ -10,6 +10,7 @@ public class ResultadoTeste {
     private final String log;
     private final LocalDateTime dataHora;
     private final long tempoExecucao;
+    private final String erro;
 
 
     public ResultadoTeste(
@@ -18,7 +19,8 @@ public class ResultadoTeste {
             String screenshot,
             String log,
             LocalDateTime dataHora,
-            long tempoExecucao
+            long tempoExecucao,
+            String erro
     ) {
 
         this.nomeTeste = nomeTeste;
@@ -27,6 +29,7 @@ public class ResultadoTeste {
         this.log = log;
         this.dataHora = dataHora;
         this.tempoExecucao = tempoExecucao;
+        this.erro = erro;
 
     }
 
@@ -52,6 +55,12 @@ public class ResultadoTeste {
 
     public long getTempoExecucao() {
         return tempoExecucao;
+    }
+
+    public String getErro() {
+
+        return erro;
+
     }
 
 }

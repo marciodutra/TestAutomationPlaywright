@@ -1,46 +1,46 @@
 Teste: AlunosTest_naoDeveCadastrarAlunoSemCpf
 Status: FALHOU
-Data/Hora: 2026-07-09T18:52:30.872628
+Data/Hora: 2026-07-10T19:08:38.322598600
 
 Console:
 [verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
 [log] Login realizado: admin
 [verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
 [log] DASHBOARD: {
-  "totalAlunos": 68,
-  "totalProfessores": 19,
-  "totalTurmas": 7,
-  "totalMatriculas": 15,
+  "totalAlunos": 100,
+  "totalProfessores": 20,
+  "totalTurmas": 28,
+  "totalMatriculas": 27,
   "ultimasMatriculas": [
     {
-      "id": 21,
-      "aluno": "Mauricio",
-      "turma": "A07 - 3º ano",
-      "data_matricula": "2026-06-19T16:05:39.375Z"
+      "id": 42,
+      "aluno": "Aluno Teste QA 20260709185154",
+      "turma": "Turma QA 152914",
+      "data_matricula": "2026-07-10T19:03:09.346Z"
     },
     {
-      "id": 20,
-      "aluno": "Jairo",
-      "turma": "A07 - 3º ano",
-      "data_matricula": "2026-06-18T21:03:33.763Z"
+      "id": 39,
+      "aluno": "Aluno Teste QA 20260710155738",
+      "turma": "Turma QA 155744",
+      "data_matricula": "2026-07-10T18:58:34.178Z"
     },
     {
-      "id": 19,
-      "aluno": "Yasmin",
-      "turma": "A07 - 3º ano",
-      "data_matricula": "2026-06-18T18:01:52.872Z"
+      "id": 37,
+      "aluno": "Aluno Teste QA 20260710155230",
+      "turma": "Turma QA 155236",
+      "data_matricula": "2026-07-10T18:53:26.215Z"
     },
     {
-      "id": 18,
-      "aluno": "Márcio",
-      "turma": "A07 - 3º ano",
-      "data_matricula": "2026-06-18T18:01:46.312Z"
+      "id": 35,
+      "aluno": "Aluno Teste QA 20260710155002",
+      "turma": "Turma QA 155009",
+      "data_matricula": "2026-07-10T18:50:59.214Z"
     },
     {
-      "id": 17,
-      "aluno": "Cássio",
-      "turma": "A07 - 3º ano",
-      "data_matricula": "2026-06-18T18:01:39.212Z"
+      "id": 33,
+      "aluno": "Aluno Teste QA 20260710154348",
+      "turma": "Turma QA 154356",
+      "data_matricula": "2026-07-10T18:44:45.703Z"
     }
   ]
 }

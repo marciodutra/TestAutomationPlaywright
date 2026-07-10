@@ -244,12 +244,13 @@ public class ReportHtml {
                 }
 
 
-                td {
-
-                    padding:12px;
-                    border-bottom:1px solid #ddd;
-
-                }
+                    td {
+                    
+                         padding:12px;
+                         border-bottom:1px solid #ddd;
+                         vertical-align:top;
+                    
+                     }
 
 
                 .status {
@@ -443,11 +444,12 @@ public class ReportHtml {
 
                 <tr>
 
-                    <th>Teste</th>
-                    <th>Data/Hora</th>
-                    <th>Tempo</th>
-                    <th>Status</th>
-                    <th>Evidências</th>
+                   <th>Teste</th>
+                   <th>Data/Hora</th>
+                   <th>Tempo</th>
+                   <th>Status</th>
+                   <th>Motivo da Falha</th>
+                   <th>Evidências</th>
 
                 </tr>
 
@@ -496,7 +498,32 @@ public class ReportHtml {
 
                 html.append("</td>");
 
+                html.append("<td>");
 
+                if (resultado.getErro() != null &&
+                        !resultado.getErro().isBlank()) {
+
+
+                    String erro =
+                            resultado.getErro();
+
+
+                    if (erro.length() > 150) {
+
+                        erro = erro.substring(0,150)
+                                + "...";
+
+                    }
+
+
+                    html.append(erro);
+
+
+                } else {
+
+                    html.append("-");
+
+                }
 
                 html.append("<td>");
 
