@@ -10,6 +10,7 @@ public class ResultadoTeste {
     private final String log;
     private final LocalDateTime dataHora;
 
+
     public ResultadoTeste(
             String nomeTeste,
             String status,

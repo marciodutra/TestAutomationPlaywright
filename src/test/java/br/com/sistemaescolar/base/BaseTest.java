@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 import br.com.sistemaescolar.extensions.EvidenciaExtension;
 import org.junit.jupiter.api.extension.ExtendWith;
 import br.com.sistemaescolar.utils.ConsoleLogger;
+import br.com.sistemaescolar.pages.TurmasPage;
 
 @ExtendWith(EvidenciaExtension.class)
 
@@ -29,6 +30,7 @@ public class BaseTest {
     protected AlunosPage alunos;
     protected ProfessoresPage professores;
     protected String nomeTeste;
+    protected TurmasPage turmas;
 
     @BeforeEach
     public void iniciar(TestInfo testInfo) {
@@ -53,6 +55,7 @@ public class BaseTest {
         dashboard = new DashboardPage(page);
         alunos = new AlunosPage(page);
         professores = new ProfessoresPage(page);
+        turmas = new TurmasPage(page);
 
         page.onConsoleMessage(msg -> {
 

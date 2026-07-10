@@ -1,0 +1,7 @@
+Teste: TurmasTest_deveAbrirFormularioNovaTurma
+Status: PASSOU
+Data/Hora: 2026-07-10T11:40:06.479119900
+
+Console:
+[verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
+[log] Login realizado: admin
