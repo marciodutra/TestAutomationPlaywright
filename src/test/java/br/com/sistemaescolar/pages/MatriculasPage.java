@@ -58,6 +58,7 @@ public class MatriculasPage extends BasePage {
 
     public void selecionarAluno(String aluno){
 
+
         cmbAluno.selectOption(
                 new SelectOption()
                         .setLabel(aluno)
@@ -67,6 +68,7 @@ public class MatriculasPage extends BasePage {
 
 
     public void selecionarTurma(String turma){
+
 
         cmbTurma.waitFor();
 
@@ -107,8 +109,9 @@ public class MatriculasPage extends BasePage {
 
         clicarMatricular();
 
+        page.waitForTimeout(2000);
 
-        return capturarToast("Matrícula realizada");
+        return capturarUltimoToast();
 
     }
 
@@ -138,6 +141,31 @@ public class MatriculasPage extends BasePage {
             }
 
         }
+
+    }
+
+    public boolean formularioNovaMatriculaAberto() {
+
+        return page.getByRole(
+                AriaRole.HEADING,
+                new Page.GetByRoleOptions()
+                        .setName("Nova matrícula")
+        ).isVisible();
+
+    }
+
+    public void pesquisarMatricula(String texto) {
+
+        txtPesquisar.fill(texto);
+
+        page.waitForTimeout(1000);
+
+    }
+
+
+    public boolean matriculaApareceNaLista(String texto) {
+
+        return page.getByText(texto).isVisible();
 
     }
 

@@ -1,0 +1,47 @@
+Teste: MatriculasTest_naoDeveCadastrarMatriculaDuplicada
+Status: PASSOU
+Data/Hora: 2026-07-10T15:57:59.609295300
+
+Console:
+[verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
+[log] Login realizado: admin
+[verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
+[log] DASHBOARD: {
+  "totalAlunos": 83,
+  "totalProfessores": 20,
+  "totalTurmas": 27,
+  "totalMatriculas": 25,
+  "ultimasMatriculas": [
+    {
+      "id": 37,
+      "aluno": "Aluno Teste QA 20260710155230",
+      "turma": "Turma QA 155236",
+      "data_matricula": "2026-07-10T18:53:26.215Z"
+    },
+    {
+      "id": 35,
+      "aluno": "Aluno Teste QA 20260710155002",
+      "turma": "Turma QA 155009",
+      "data_matricula": "2026-07-10T18:50:59.214Z"
+    },
+    {
+      "id": 33,
+      "aluno": "Aluno Teste QA 20260710154348",
+      "turma": "Turma QA 154356",
+      "data_matricula": "2026-07-10T18:44:45.703Z"
+    },
+    {
+      "id": 30,
+      "aluno": "Aluno Teste QA 20260710153435",
+      "turma": "Turma QA 153441",
+      "data_matricula": "2026-07-10T18:35:31.053Z"
+    },
+    {
+      "id": 28,
+      "aluno": "Aluno Teste QA 20260710152906",
+      "turma": "Turma QA 152914",
+      "data_matricula": "2026-07-10T18:30:04.096Z"
+    }
+  ]
+}
+[error] Failed to load resource: the server responded with a status of 500 ()

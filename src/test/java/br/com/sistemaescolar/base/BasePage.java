@@ -52,11 +52,28 @@ public abstract class BasePage {
 
 
         Locator toast =
-                page.getByText(mensagemEsperada);
+                page.locator(".Toastify__toast")
+                        .last();
 
 
         toast.waitFor();
 
+
+        return toast.innerText();
+
+    }
+
+    protected String capturarUltimoToast(){
+
+        Locator toast =
+                page.locator(".Toastify__toast")
+                        .last();
+
+        toast.waitFor();
+
+        System.out.println(
+                "Toast capturado: " + toast.innerText()
+        );
 
         return toast.innerText();
 

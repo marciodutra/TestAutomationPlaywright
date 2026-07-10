@@ -1,0 +1,45 @@
+Teste: MatriculasTest_deveAbrirFormularioNovaMatricula
+Status: PASSOU
+Data/Hora: 2026-07-10T15:00:47.558990600
+
+Console:
+[verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
+[log] Login realizado: admin
+[log] DASHBOARD: {
+  "totalAlunos": 78,
+  "totalProfessores": 20,
+  "totalTurmas": 22,
+  "totalMatriculas": 20,
+  "ultimasMatriculas": [
+    {
+      "id": 27,
+      "aluno": "Aluno Teste QA 20260710144909",
+      "turma": "Turma QA 144915",
+      "data_matricula": "2026-07-10T17:50:04.803Z"
+    },
+    {
+      "id": 26,
+      "aluno": "Aluno Teste QA 20260710144708",
+      "turma": "Turma QA 144714",
+      "data_matricula": "2026-07-10T17:48:03.727Z"
+    },
+    {
+      "id": 25,
+      "aluno": "Aluno Teste QA 20260709104557",
+      "turma": "A07 - 3º ano",
+      "data_matricula": "2026-07-10T16:58:31.158Z"
+    },
+    {
+      "id": 24,
+      "aluno": "Aluno Teste QA 20260708174157",
+      "turma": "A03 - 2 ano",
+      "data_matricula": "2026-07-10T16:58:16.309Z"
+    },
+    {
+      "id": 22,
+      "aluno": "Aluno Teste QA 20260709171137",
+      "turma": "A01 - 8ª ano",
+      "data_matricula": "2026-07-10T16:45:04.191Z"
+    }
+  ]
+}
