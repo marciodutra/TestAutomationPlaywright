@@ -1,46 +1,8 @@
 Teste: AlunosTest_deveAbrirFormularioNovoAluno
 Status: PASSOU
-Data/Hora: 2026-07-10T14:41:10.018449900
+Data/Hora: 2026-07-10T17:40:08.557526400
 
 Console:
 [verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
 [log] Login realizado: admin
 [verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
-[log] DASHBOARD: {
-  "totalAlunos": 75,
-  "totalProfessores": 20,
-  "totalTurmas": 18,
-  "totalMatriculas": 18,
-  "ultimasMatriculas": [
-    {
-      "id": 25,
-      "aluno": "Aluno Teste QA 20260709104557",
-      "turma": "A07 - 3º ano",
-      "data_matricula": "2026-07-10T16:58:31.158Z"
-    },
-    {
-      "id": 24,
-      "aluno": "Aluno Teste QA 20260708174157",
-      "turma": "A03 - 2 ano",
-      "data_matricula": "2026-07-10T16:58:16.309Z"
-    },
-    {
-      "id": 22,
-      "aluno": "Aluno Teste QA 20260709171137",
-      "turma": "A01 - 8ª ano",
-      "data_matricula": "2026-07-10T16:45:04.191Z"
-    },
-    {
-      "id": 21,
-      "aluno": "Mauricio",
-      "turma": "A07 - 3º ano",
-      "data_matricula": "2026-06-19T16:05:39.375Z"
-    },
-    {
-      "id": 20,
-      "aluno": "Jairo",
-      "turma": "A07 - 3º ano",
-      "data_matricula": "2026-06-18T21:03:33.763Z"
-    }
-  ]
-}

@@ -34,6 +34,27 @@ public class ReportHtml {
 
     }
 
+    private static String formatarTempo(long tempoMs) {
+
+        if (tempoMs < 1000) {
+
+            return tempoMs + " ms";
+
+        }
+
+        if (tempoMs < 60000) {
+
+            return String.format("%.2f s", tempoMs / 1000.0);
+
+        }
+
+        long minutos = tempoMs / 60000;
+        long segundos = (tempoMs % 60000) / 1000;
+
+        return minutos + " min " + segundos + " s";
+
+    }
+
     public static void gerar() {
 
         try {
@@ -401,8 +422,7 @@ public class ReportHtml {
                         <div class="numero azul">
 """);
 
-            html.append(tempoTotal);
-            html.append(" ms");
+            html.append(formatarTempo(tempoTotal));
 
             html.append("""
                         </div>
@@ -462,8 +482,7 @@ public class ReportHtml {
                         .append("</td>");
 
                 html.append("<td>")
-                        .append(resultado.getTempoExecucao())
-                        .append(" ms")
+                        .append(formatarTempo(resultado.getTempoExecucao()))
                         .append("</td>");
 
 
@@ -502,7 +521,6 @@ public class ReportHtml {
                 html.append("</tr>");
 
             }
-
 
 
             html.append("""

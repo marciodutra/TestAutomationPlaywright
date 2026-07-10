@@ -1,46 +1,46 @@
 Teste: AlunosTest_naoDeveCadastrarAlunoSemSenha
 Status: PASSOU
-Data/Hora: 2026-07-10T14:40:50.279768800
+Data/Hora: 2026-07-10T17:39:46.856100700
 
 Console:
 [verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
 [log] Login realizado: admin
 [verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
 [log] DASHBOARD: {
-  "totalAlunos": 75,
+  "totalAlunos": 89,
   "totalProfessores": 20,
-  "totalTurmas": 18,
-  "totalMatriculas": 18,
+  "totalTurmas": 28,
+  "totalMatriculas": 27,
   "ultimasMatriculas": [
     {
-      "id": 25,
-      "aluno": "Aluno Teste QA 20260709104557",
-      "turma": "A07 - 3º ano",
-      "data_matricula": "2026-07-10T16:58:31.158Z"
+      "id": 42,
+      "aluno": "Aluno Teste QA 20260709185154",
+      "turma": "Turma QA 152914",
+      "data_matricula": "2026-07-10T19:03:09.346Z"
     },
     {
-      "id": 24,
-      "aluno": "Aluno Teste QA 20260708174157",
-      "turma": "A03 - 2 ano",
-      "data_matricula": "2026-07-10T16:58:16.309Z"
+      "id": 39,
+      "aluno": "Aluno Teste QA 20260710155738",
+      "turma": "Turma QA 155744",
+      "data_matricula": "2026-07-10T18:58:34.178Z"
     },
     {
-      "id": 22,
-      "aluno": "Aluno Teste QA 20260709171137",
-      "turma": "A01 - 8ª ano",
-      "data_matricula": "2026-07-10T16:45:04.191Z"
+      "id": 37,
+      "aluno": "Aluno Teste QA 20260710155230",
+      "turma": "Turma QA 155236",
+      "data_matricula": "2026-07-10T18:53:26.215Z"
     },
     {
-      "id": 21,
-      "aluno": "Mauricio",
-      "turma": "A07 - 3º ano",
-      "data_matricula": "2026-06-19T16:05:39.375Z"
+      "id": 35,
+      "aluno": "Aluno Teste QA 20260710155002",
+      "turma": "Turma QA 155009",
+      "data_matricula": "2026-07-10T18:50:59.214Z"
     },
     {
-      "id": 20,
-      "aluno": "Jairo",
-      "turma": "A07 - 3º ano",
-      "data_matricula": "2026-06-18T21:03:33.763Z"
+      "id": 33,
+      "aluno": "Aluno Teste QA 20260710154348",
+      "turma": "Turma QA 154356",
+      "data_matricula": "2026-07-10T18:44:45.703Z"
     }
   ]
 }
