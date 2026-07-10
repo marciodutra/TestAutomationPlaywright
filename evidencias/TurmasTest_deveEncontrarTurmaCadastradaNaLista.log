@@ -1,16 +1,34 @@
 Teste: TurmasTest_deveEncontrarTurmaCadastradaNaLista
 Status: PASSOU
-Data/Hora: 2026-07-10T12:23:06.535685600
+Data/Hora: 2026-07-10T14:42:45.115867800
 
 Console:
 [verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
 [log] Login realizado: admin
 [log] DASHBOARD: {
-  "totalAlunos": 69,
-  "totalProfessores": 19,
-  "totalTurmas": 9,
-  "totalMatriculas": 15,
+  "totalAlunos": 76,
+  "totalProfessores": 20,
+  "totalTurmas": 19,
+  "totalMatriculas": 18,
   "ultimasMatriculas": [
+    {
+      "id": 25,
+      "aluno": "Aluno Teste QA 20260709104557",
+      "turma": "A07 - 3º ano",
+      "data_matricula": "2026-07-10T16:58:31.158Z"
+    },
+    {
+      "id": 24,
+      "aluno": "Aluno Teste QA 20260708174157",
+      "turma": "A03 - 2 ano",
+      "data_matricula": "2026-07-10T16:58:16.309Z"
+    },
+    {
+      "id": 22,
+      "aluno": "Aluno Teste QA 20260709171137",
+      "turma": "A01 - 8ª ano",
+      "data_matricula": "2026-07-10T16:45:04.191Z"
+    },
     {
       "id": 21,
       "aluno": "Mauricio",
@@ -22,24 +40,6 @@ Console:
       "aluno": "Jairo",
       "turma": "A07 - 3º ano",
       "data_matricula": "2026-06-18T21:03:33.763Z"
-    },
-    {
-      "id": 19,
-      "aluno": "Yasmin",
-      "turma": "A07 - 3º ano",
-      "data_matricula": "2026-06-18T18:01:52.872Z"
-    },
-    {
-      "id": 18,
-      "aluno": "Márcio",
-      "turma": "A07 - 3º ano",
-      "data_matricula": "2026-06-18T18:01:46.312Z"
-    },
-    {
-      "id": 17,
-      "aluno": "Cássio",
-      "turma": "A07 - 3º ano",
-      "data_matricula": "2026-06-18T18:01:39.212Z"
     }
   ]
 }

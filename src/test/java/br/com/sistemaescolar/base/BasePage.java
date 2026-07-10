@@ -48,5 +48,19 @@ public abstract class BasePage {
 
     }
 
+    protected String capturarToast(String mensagemEsperada) {
+
+
+        Locator toast =
+                page.getByText(mensagemEsperada);
+
+
+        toast.waitFor();
+
+
+        return toast.innerText();
+
+    }
+
 
 }

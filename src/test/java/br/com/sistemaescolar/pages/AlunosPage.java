@@ -152,11 +152,7 @@ public class AlunosPage extends BasePage {
 
         clicarSalvar();
 
-        Locator toast = page.locator(".Toastify__toast");
-
-        toast.waitFor();
-
-        return toast.innerText();
+        return capturarToast("Aluno cadastrado com sucesso!");
 
     }
 

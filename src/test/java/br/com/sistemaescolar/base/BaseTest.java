@@ -17,6 +17,7 @@ import br.com.sistemaescolar.extensions.EvidenciaExtension;
 import org.junit.jupiter.api.extension.ExtendWith;
 import br.com.sistemaescolar.utils.ConsoleLogger;
 import br.com.sistemaescolar.pages.TurmasPage;
+import br.com.sistemaescolar.pages.MatriculasPage;
 
 @ExtendWith(EvidenciaExtension.class)
 
@@ -31,6 +32,7 @@ public class BaseTest {
     protected ProfessoresPage professores;
     protected String nomeTeste;
     protected TurmasPage turmas;
+    protected MatriculasPage matriculas;
 
     @BeforeEach
     public void iniciar(TestInfo testInfo) {
@@ -56,6 +58,7 @@ public class BaseTest {
         alunos = new AlunosPage(page);
         professores = new ProfessoresPage(page);
         turmas = new TurmasPage(page);
+        matriculas = new MatriculasPage(page);
 
         page.onConsoleMessage(msg -> {
 

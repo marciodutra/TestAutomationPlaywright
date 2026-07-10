@@ -88,11 +88,7 @@ public class TurmasPage extends BasePage {
 
         clicarSalvar();
 
-        Locator toast = page.locator(".Toastify__toast");
-
-        toast.waitFor();
-
-        return toast.innerText();
+        return capturarToast("Turma criada");
 
     }
 
