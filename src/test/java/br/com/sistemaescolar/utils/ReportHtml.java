@@ -287,18 +287,74 @@ public class ReportHtml {
                 }
 
 
-                .rodape {
+    .rodape {
 
-                    margin-top:30px;
-                    text-align:center;
-                    color:#777;
+               margin-top:30px;
+               text-align:center;
+               color:#777;
 
-                }
+           }
 
 
-                </style>
+           .modal {
 
-                </head>
+               display:none;
+               position:fixed;
+               z-index:1000;
+               left:0;
+               top:0;
+               width:100%;
+               height:100%;
+               background:rgba(0,0,0,0.5);
+
+           }
+
+
+           .modal-conteudo {
+
+               background:white;
+               width:600px;
+               margin:80px auto;
+               padding:25px;
+               border-radius:12px;
+               box-shadow:0 4px 12px rgba(0,0,0,0.3);
+
+           }
+
+
+           .modal-conteudo h2 {
+
+               margin-top:0;
+
+           }
+
+
+           .erro-detalhe {
+
+               background:#f8f9fa;
+               border:1px solid #ddd;
+               padding:15px;
+               border-radius:8px;
+               white-space:pre-wrap;
+
+           }
+
+
+           .botao-modal {
+
+               background:#0d6efd;
+               color:white;
+               border:none;
+               padding:8px 15px;
+               border-radius:6px;
+               cursor:pointer;
+
+           }
+
+
+           </style>
+
+           </head>
 
 
                 <body>
@@ -516,7 +572,9 @@ public class ReportHtml {
                     }
 
 
-                    html.append(erro);
+                    html.append("<button onclick=\"abrirErro('")
+                            .append(resultado.getErro().replace("'", ""))
+                            .append("')\">🔍 Ver detalhes</button>");
 
 
                 } else {
@@ -552,7 +610,73 @@ public class ReportHtml {
 
             html.append("""
                 
-                </table>
+                                    </table>
+                    
+                    
+                    
+                                   <script>
+
+
+                                   function abrirErro(mensagem) {
+
+
+                                       document.getElementById("textoErro")
+                                               .innerHTML = mensagem;
+
+
+                                       document.getElementById("modalErro")
+                                               .style.display = "block";
+
+
+                                   }
+                                   
+                                   function fecharErro() {
+                    
+                                           document.getElementById("modalErro")
+                                                   .style.display = "none";
+                    
+                                       }
+
+
+                                   </script>
+
+
+
+                                   <div id="modalErro"
+                                        class="modal">
+
+
+                    <div class="modal-conteudo">
+
+
+                        <h2>
+                            Detalhes da Falha
+                        </h2>
+
+
+                        <div id="textoErro"
+                             class="erro-detalhe">
+
+                        </div>
+
+
+                        <br>
+
+
+                        <button
+                             class="botao-modal"
+                             onclick="fecharErro()">
+    
+                         Fechar
+    
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
 
 
                 <div class="rodape">

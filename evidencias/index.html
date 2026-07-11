@@ -1,216 +1,272 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+            <!DOCTYPE html>
+            <html lang="pt-BR">
 
-<head>
+            <head>
 
-<meta charset="UTF-8">
+            <meta charset="UTF-8">
 
-<title>
-    Sistema Escolar - Relatório de Testes
-</title>
+            <title>
+                Sistema Escolar - Relatório de Testes
+            </title>
 
 
-<style>
+            <style>
 
-body {
+            body {
 
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f8;
-    margin: 0;
-    padding: 30px;
+                font-family: Arial, Helvetica, sans-serif;
+                background: #f4f6f8;
+                margin: 0;
+                padding: 30px;
 
-}
+            }
 
 
-.container {
+            .container {
 
-    max-width: 1200px;
-    margin: auto;
+                max-width: 1200px;
+                margin: auto;
 
-}
+            }
 
 
-.header {
+            .header {
 
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    margin-bottom: 25px;
+                background: white;
+                padding: 25px;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                margin-bottom: 25px;
 
-}
+            }
 
 
-h1 {
+            h1 {
 
-    margin:0;
-    color:#333;
+                margin:0;
+                color:#333;
 
-}
+            }
 
 
-.data {
+            .data {
 
-    color:#666;
-    margin-top:10px;
+                color:#666;
+                margin-top:10px;
 
-}
+            }
 
 
-.cards {
+            .cards {
 
-    display:flex;
-    gap:20px;
-    margin-bottom:25px;
+                display:flex;
+                gap:20px;
+                margin-bottom:25px;
 
-}
+            }
 
 
-.card {
+            .card {
 
-    flex:1;
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    text-align:center;
-    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+                flex:1;
+                background:white;
+                padding:20px;
+                border-radius:12px;
+                text-align:center;
+                box-shadow:0 4px 12px rgba(0,0,0,0.1);
 
-}
+            }
 
 
-.numero {
+            .numero {
 
-    font-size:32px;
-    font-weight:bold;
+                font-size:32px;
+                font-weight:bold;
 
-}
+            }
 
 
-.titulo {
+            .titulo {
 
-    color:#666;
-    margin-top:8px;
+                color:#666;
+                margin-top:8px;
 
-}
+            }
 
 
-.verde {
+            .verde {
 
-    color:#198754;
+                color:#198754;
 
-}
+            }
 
 
-.vermelho {
+            .vermelho {
 
-    color:#dc3545;
+                color:#dc3545;
 
-}
+            }
 
 
-.azul {
+            .azul {
 
-    color:#0d6efd;
+                color:#0d6efd;
 
-}
+            }
 
 
-table {
+            table {
 
-    width:100%;
-    border-collapse:collapse;
-    background:white;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+                width:100%;
+                border-collapse:collapse;
+                background:white;
+                border-radius:12px;
+                overflow:hidden;
+                box-shadow:0 4px 12px rgba(0,0,0,0.1);
 
-}
+            }
 
 
-th {
+            th {
 
-    background:#0d6efd;
-    color:white;
-    padding:15px;
-    text-align:left;
+                background:#0d6efd;
+                color:white;
+                padding:15px;
+                text-align:left;
 
-}
+            }
 
 
-    td {
+                td {
 
-         padding:12px;
-         border-bottom:1px solid #ddd;
-         vertical-align:top;
+                     padding:12px;
+                     border-bottom:1px solid #ddd;
+                     vertical-align:top;
 
-     }
+                 }
 
 
-.status {
+            .status {
 
-    padding:6px 12px;
-    border-radius:20px;
-    font-weight:bold;
-    display:inline-block;
+                padding:6px 12px;
+                border-radius:20px;
+                font-weight:bold;
+                display:inline-block;
 
-}
+            }
 
 
-.passou {
+            .passou {
 
-    background:#d1e7dd;
-    color:#0f5132;
+                background:#d1e7dd;
+                color:#0f5132;
 
-}
+            }
 
 
-.falhou {
+            .falhou {
 
-    background:#f8d7da;
-    color:#842029;
+                background:#f8d7da;
+                color:#842029;
 
-}
+            }
 
 
-a {
+            a {
 
-    text-decoration:none;
-    font-weight:bold;
+                text-decoration:none;
+                font-weight:bold;
 
-}
+            }
 
 
 .rodape {
 
-    margin-top:30px;
-    text-align:center;
-    color:#777;
+           margin-top:30px;
+           text-align:center;
+           color:#777;
 
-}
-
-
-</style>
-
-</head>
+       }
 
 
-<body>
+       .modal {
+
+           display:none;
+           position:fixed;
+           z-index:1000;
+           left:0;
+           top:0;
+           width:100%;
+           height:100%;
+           background:rgba(0,0,0,0.5);
+
+       }
 
 
-<div class="container">
+       .modal-conteudo {
+
+           background:white;
+           width:600px;
+           margin:80px auto;
+           padding:25px;
+           border-radius:12px;
+           box-shadow:0 4px 12px rgba(0,0,0,0.3);
+
+       }
 
 
-<div class="header">
+       .modal-conteudo h2 {
 
-    <h1>
-        Sistema Escolar Automation
-    </h1>
+           margin-top:0;
+
+       }
 
 
-    <div class="data">
+       .erro-detalhe {
 
-        Relatório gerado em:
-10/07/2026 19:09:10    </div>
+           background:#f8f9fa;
+           border:1px solid #ddd;
+           padding:15px;
+           border-radius:8px;
+           white-space:pre-wrap;
+
+       }
+
+
+       .botao-modal {
+
+           background:#0d6efd;
+           color:white;
+           border:none;
+           padding:8px 15px;
+           border-radius:6px;
+           cursor:pointer;
+
+       }
+
+
+       </style>
+
+       </head>
+
+
+            <body>
+
+
+            <div class="container">
+
+
+            <div class="header">
+
+                <h1>
+                    Sistema Escolar Automation
+                </h1>
+
+
+                <div class="data">
+
+                    Relatório gerado em:
+10/07/2026 21:24:49    </div>
 
 </div>
 
@@ -274,7 +330,7 @@ a {
                     <div class="card">
 
                         <div class="numero azul">
-1 min 14 s        </div>
+1 min 17 s        </div>
 
         <div class="titulo">
             Tempo total
@@ -301,8 +357,74 @@ a {
 
 </tr>
 
-<tr><td>AlunosTest_deveEncontrarAlunoCadastradoNaLista</td><td>10/07/2026 19:07:59</td><td>14,87 s</td><td><span class='status passou'>PASSOU</span></td><td>-<td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveEncontrarAlunoCadastradoNaLista.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveEncontrarAlunoCadastradoNaLista.log'>📄 Log</a></td></tr><tr><td>AlunosTest_naoDeveCadastrarAlunoSemEmail</td><td>10/07/2026 19:08:12</td><td>11,32 s</td><td><span class='status falhou'>FALHOU</span></td><td>expected: <Preencha os campos obrigatórios> but was: <Erro ao salvar aluno><td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemEmail.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemEmail.log'>📄 Log</a></td></tr><tr><td>AlunosTest_naoDeveCadastrarAlunoSemSenha</td><td>10/07/2026 19:08:26</td><td>11,88 s</td><td><span class='status passou'>PASSOU</span></td><td>-<td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemSenha.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemSenha.log'>📄 Log</a></td></tr><tr><td>AlunosTest_naoDeveCadastrarAlunoSemCpf</td><td>10/07/2026 19:08:38</td><td>9,82 s</td><td><span class='status falhou'>FALHOU</span></td><td>expected: <Preencha os campos obrigatórios> but was: <Erro ao salvar aluno><td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemCpf.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemCpf.log'>📄 Log</a></td></tr><tr><td>AlunosTest_naoDeveCadastrarAlunoSemNome</td><td>10/07/2026 19:08:50</td><td>9,96 s</td><td><span class='status passou'>PASSOU</span></td><td>-<td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemNome.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemNome.log'>📄 Log</a></td></tr><tr><td>AlunosTest_deveAbrirFormularioNovoAluno</td><td>10/07/2026 19:08:57</td><td>5,30 s</td><td><span class='status passou'>PASSOU</span></td><td>-<td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveAbrirFormularioNovoAluno.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveAbrirFormularioNovoAluno.log'>📄 Log</a></td></tr><tr><td>AlunosTest_deveCadastrarAlunoComDadosValidos</td><td>10/07/2026 19:09:10</td><td>10,97 s</td><td><span class='status passou'>PASSOU</span></td><td>-<td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveCadastrarAlunoComDadosValidos.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveCadastrarAlunoComDadosValidos.log'>📄 Log</a></td></tr>
-</table>
+<tr><td>AlunosTest_deveEncontrarAlunoCadastradoNaLista</td><td>10/07/2026 21:23:36</td><td>14,56 s</td><td><span class='status passou'>PASSOU</span></td><td>-<td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveEncontrarAlunoCadastradoNaLista.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveEncontrarAlunoCadastradoNaLista.log'>📄 Log</a></td></tr><tr><td>AlunosTest_naoDeveCadastrarAlunoSemEmail</td><td>10/07/2026 21:23:49</td><td>10,61 s</td><td><span class='status falhou'>FALHOU</span></td><td><button onclick="abrirErro('O sistema permitiu cadastrar aluno sem informar o email. ==> expected: <Preencha os campos obrigatórios> but was: <Erro ao salvar aluno>')">🔍 Ver detalhes</button><td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemEmail.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemEmail.log'>📄 Log</a></td></tr><tr><td>AlunosTest_naoDeveCadastrarAlunoSemSenha</td><td>10/07/2026 21:24:02</td><td>10,87 s</td><td><span class='status passou'>PASSOU</span></td><td>-<td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemSenha.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemSenha.log'>📄 Log</a></td></tr><tr><td>AlunosTest_naoDeveCadastrarAlunoSemCpf</td><td>10/07/2026 21:24:16</td><td>12,40 s</td><td><span class='status falhou'>FALHOU</span></td><td><button onclick="abrirErro('O sistema permitiu cadastrar aluno sem informar o CPF. ==> expected: <Preencha os campos obrigatórios> but was: <Erro ao salvar aluno>')">🔍 Ver detalhes</button><td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemCpf.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemCpf.log'>📄 Log</a></td></tr><tr><td>AlunosTest_naoDeveCadastrarAlunoSemNome</td><td>10/07/2026 21:24:29</td><td>11,35 s</td><td><span class='status passou'>PASSOU</span></td><td>-<td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemNome.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_naoDeveCadastrarAlunoSemNome.log'>📄 Log</a></td></tr><tr><td>AlunosTest_deveAbrirFormularioNovoAluno</td><td>10/07/2026 21:24:37</td><td>6,43 s</td><td><span class='status passou'>PASSOU</span></td><td>-<td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveAbrirFormularioNovoAluno.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveAbrirFormularioNovoAluno.log'>📄 Log</a></td></tr><tr><td>AlunosTest_deveCadastrarAlunoComDadosValidos</td><td>10/07/2026 21:24:49</td><td>11,09 s</td><td><span class='status passou'>PASSOU</span></td><td>-<td><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveCadastrarAlunoComDadosValidos.png'>📷 Screenshot</a><br><a target='_blank' rel='noopener noreferrer' href='AlunosTest_deveCadastrarAlunoComDadosValidos.log'>📄 Log</a></td></tr>
+                    </table>
+
+
+
+                   <script>
+
+
+                   function abrirErro(mensagem) {
+
+
+                       document.getElementById("textoErro")
+                               .innerHTML = mensagem;
+
+
+                       document.getElementById("modalErro")
+                               .style.display = "block";
+
+
+                   }
+
+                   function fecharErro() {
+
+                           document.getElementById("modalErro")
+                                   .style.display = "none";
+
+                       }
+
+
+                   </script>
+
+
+
+                   <div id="modalErro"
+                        class="modal">
+
+
+    <div class="modal-conteudo">
+
+
+        <h2>
+            Detalhes da Falha
+        </h2>
+
+
+        <div id="textoErro"
+             class="erro-detalhe">
+
+        </div>
+
+
+        <br>
+
+
+        <button
+             class="botao-modal"
+             onclick="fecharErro()">
+
+         Fechar
+
+        </button>
+
+
+    </div>
+
+
+</div>
+
 
 
 <div class="rodape">

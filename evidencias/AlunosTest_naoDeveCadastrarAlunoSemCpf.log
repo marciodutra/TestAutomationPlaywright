@@ -1,13 +1,13 @@
 Teste: AlunosTest_naoDeveCadastrarAlunoSemCpf
 Status: FALHOU
-Data/Hora: 2026-07-10T19:08:38.322598600
+Data/Hora: 2026-07-10T21:24:16.124008800
 
 Console:
 [verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
 [log] Login realizado: admin
 [verbose] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o
 [log] DASHBOARD: {
-  "totalAlunos": 100,
+  "totalAlunos": 130,
   "totalProfessores": 20,
   "totalTurmas": 28,
   "totalMatriculas": 27,
@@ -50,4 +50,4 @@ Console:
     at XMLHttpRequest.m (https://sistemaescolar-virid.vercel.app/static/js/main.ecaa02f2.js:2:512289)
 
 Erro:
-expected: <Preencha os campos obrigatórios> but was: <Erro ao salvar aluno>
+O sistema permitiu cadastrar aluno sem informar o CPF. ==> expected: <Preencha os campos obrigatórios> but was: <Erro ao salvar aluno>

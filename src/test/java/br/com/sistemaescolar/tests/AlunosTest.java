@@ -38,10 +38,12 @@ public class AlunosTest extends BaseTest {
 
         Assertions.assertEquals(
                 "Aluno cadastrado com sucesso!",
-                mensagem
+                mensagem,
+                "O aluno não foi cadastrado com os dados informados."
         );
 
     }
+
 
     @Test
     public void deveEncontrarAlunoCadastradoNaLista() {
@@ -65,6 +67,7 @@ public class AlunosTest extends BaseTest {
 
     }
 
+
     @Test
     public void naoDeveCadastrarAlunoSemNome() {
 
@@ -80,10 +83,12 @@ public class AlunosTest extends BaseTest {
 
         Assertions.assertEquals(
                 "Preencha os campos obrigatórios",
-                mensagem
+                mensagem,
+                "O sistema permitiu cadastrar aluno sem informar o nome."
         );
 
     }
+
 
     @Test
     public void naoDeveCadastrarAlunoSemCpf() {
@@ -100,10 +105,12 @@ public class AlunosTest extends BaseTest {
 
         Assertions.assertEquals(
                 "Preencha os campos obrigatórios",
-                mensagem
+                mensagem,
+                "O sistema permitiu cadastrar aluno sem informar o CPF."
         );
 
     }
+
 
     @Test
     public void naoDeveCadastrarAlunoSemEmail() {
@@ -120,10 +127,12 @@ public class AlunosTest extends BaseTest {
 
         Assertions.assertEquals(
                 "Preencha os campos obrigatórios",
-                mensagem
+                mensagem,
+                "O sistema permitiu cadastrar aluno sem informar o email."
         );
 
     }
+
 
     @Test
     public void naoDeveCadastrarAlunoSemSenha() {
@@ -140,8 +149,10 @@ public class AlunosTest extends BaseTest {
 
         Assertions.assertEquals(
                 "Senha obrigatória para novo aluno",
-                mensagem
+                mensagem,
+                "O sistema permitiu cadastrar aluno sem informar a senha."
         );
 
     }
+
 }

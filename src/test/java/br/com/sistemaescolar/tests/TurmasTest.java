@@ -37,7 +37,8 @@ public class TurmasTest extends BaseTest {
 
         Assertions.assertEquals(
                 "Turma criada",
-                mensagem
+                mensagem,
+                "A turma não foi cadastrada com os dados informados."
         );
 
     }

@@ -11,6 +11,7 @@ import br.com.sistemaescolar.utils.ConsoleLogger;
 import br.com.sistemaescolar.models.ResultadoTeste;
 import br.com.sistemaescolar.utils.ReportHtml;
 import org.junit.jupiter.api.extension.BeforeTestExecutionCallback;
+import org.opentest4j.AssertionFailedError;
 
 public class EvidenciaExtension implements TestWatcher, BeforeTestExecutionCallback {
 
@@ -133,6 +134,34 @@ public class EvidenciaExtension implements TestWatcher, BeforeTestExecutionCallb
 
     }
 
+    private String gerarMensagemAmigavel(
+            ExtensionContext context,
+            Throwable cause
+    ) {
+
+        if (cause instanceof AssertionFailedError assertionError) {
+
+            if (assertionError.getMessage() != null &&
+                    !assertionError.getMessage().isBlank()) {
+
+                return assertionError.getMessage();
+
+            }
+
+        }
+
+        if (cause.getMessage() != null &&
+                !cause.getMessage().isBlank()) {
+
+            return cause.getMessage();
+
+        }
+
+        return "O teste falhou durante a execução do cenário: "
+                + context.getDisplayName();
+
+    }
+
 
     @Override
     public void testSuccessful(
@@ -157,7 +186,7 @@ public class EvidenciaExtension implements TestWatcher, BeforeTestExecutionCallb
         salvarLog(
                 context,
                 "FALHOU",
-                cause.getMessage()
+                gerarMensagemAmigavel(context, cause)
         );
 
     }
@@ -171,4 +200,6 @@ public class EvidenciaExtension implements TestWatcher, BeforeTestExecutionCallb
 
     }
 
+
 }
+

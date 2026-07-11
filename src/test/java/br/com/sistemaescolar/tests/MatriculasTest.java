@@ -10,60 +10,45 @@ import br.com.sistemaescolar.models.Turma;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-
 public class MatriculasTest extends BaseTest {
 
-
     @Test
-    public void deveCadastrarNovaMatricula(){
-
+    public void deveCadastrarNovaMatricula() {
 
         realizarLogin();
 
-
         // Criar aluno
-
         dashboard.acessarMenu("Alunos");
 
         Aluno aluno =
                 AlunoFactory.criar();
 
-
         String mensagemAluno =
                 alunos.cadastrar(aluno);
 
-
         Assertions.assertEquals(
                 "Aluno cadastrado com sucesso!",
-                mensagemAluno
+                mensagemAluno,
+                "O aluno não foi cadastrado corretamente para a realização da matrícula."
         );
 
-
-
         // Criar turma
-
         dashboard.acessarMenu("Turmas");
-
 
         Turma turma =
                 TurmaFactory.criar();
 
-
         String mensagemTurma =
                 turmas.cadastrar(turma);
 
-
         Assertions.assertEquals(
                 "Turma criada",
-                mensagemTurma
+                mensagemTurma,
+                "A turma não foi cadastrada corretamente para a realização da matrícula."
         );
 
-
-
         // Criar matrícula
-
         dashboard.acessarMenu("Matrículas");
-
 
         Matricula matricula =
                 MatriculaFactory.criar(
@@ -73,22 +58,19 @@ public class MatriculasTest extends BaseTest {
                                 + turma.getAno()
                 );
 
-
         String mensagem =
                 matriculas.cadastrar(matricula);
 
-
-
         Assertions.assertEquals(
                 "Matrícula realizada!",
-                mensagem
+                mensagem,
+                "A matrícula não foi realizada com os dados informados."
         );
-
 
     }
 
     @Test
-    public void deveAbrirFormularioNovaMatricula(){
+    public void deveAbrirFormularioNovaMatricula() {
 
         realizarLogin();
 
@@ -104,10 +86,9 @@ public class MatriculasTest extends BaseTest {
     }
 
     @Test
-    public void deveEncontrarMatriculaCadastradaNaLista(){
+    public void deveEncontrarMatriculaCadastradaNaLista() {
 
         realizarLogin();
-
 
         dashboard.acessarMenu("Alunos");
 
@@ -116,8 +97,6 @@ public class MatriculasTest extends BaseTest {
 
         alunos.cadastrar(aluno);
 
-
-
         dashboard.acessarMenu("Turmas");
 
         Turma turma =
@@ -125,10 +104,7 @@ public class MatriculasTest extends BaseTest {
 
         turmas.cadastrar(turma);
 
-
-
         dashboard.acessarMenu("Matrículas");
-
 
         Matricula matricula =
                 MatriculaFactory.criar(
@@ -138,17 +114,13 @@ public class MatriculasTest extends BaseTest {
                                 + turma.getAno()
                 );
 
-
         matriculas.cadastrar(matricula);
 
-
         dashboard.acessarMenu("Matrículas");
-
 
         matriculas.pesquisarMatricula(
                 aluno.getNome()
         );
-
 
         Assertions.assertTrue(
                 matriculas.matriculaApareceNaLista(
@@ -160,10 +132,9 @@ public class MatriculasTest extends BaseTest {
     }
 
     @Test
-    public void naoDeveCadastrarMatriculaDuplicada(){
+    public void naoDeveCadastrarMatriculaDuplicada() {
 
         realizarLogin();
-
 
         dashboard.acessarMenu("Alunos");
 
@@ -172,8 +143,6 @@ public class MatriculasTest extends BaseTest {
 
         alunos.cadastrar(aluno);
 
-
-
         dashboard.acessarMenu("Turmas");
 
         Turma turma =
@@ -181,10 +150,7 @@ public class MatriculasTest extends BaseTest {
 
         turmas.cadastrar(turma);
 
-
-
         dashboard.acessarMenu("Matrículas");
-
 
         Matricula matricula =
                 MatriculaFactory.criar(
@@ -194,20 +160,17 @@ public class MatriculasTest extends BaseTest {
                                 + turma.getAno()
                 );
 
-
         // Primeira matrícula
         matriculas.cadastrar(matricula);
-
 
         // Segunda tentativa com os mesmos dados
         String mensagem =
                 matriculas.cadastrar(matricula);
 
-
-
         Assertions.assertEquals(
                 "Erro ao matricular",
-                mensagem
+                mensagem,
+                "O sistema permitiu realizar uma matrícula duplicada."
         );
 
     }
